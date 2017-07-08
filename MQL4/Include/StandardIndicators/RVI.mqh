@@ -1,37 +1,44 @@
 //+------------------------------------------------------------------+
-//|                                                           AC.mqh |
+//|                                                          RVI.mqh |
 //|                                 Copyright 2017, Keisuke Iwabuchi |
 //|                                         https://order-button.com |
 //+------------------------------------------------------------------+
 
 
-#ifndef _LOAD_MODULE_AC
-#define _LOAD_MODULE_AC
+#ifndef _LOAD_MODULE_RVI
+#define _LOAD_MODULE_RVI
 
 
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
-/** Bill Williams Accelerator/Decelerator oscillator */
-class AC : public IndicatorsBase
+/** Relative Vigor Index */
+class RVI : public IndicatorsBase
 {
    public:
-      AC(void);
+      int period;
+      int mode;
+      
+      RVI(void);
       double Value(const int shift);
 };
 
 
-AC::AC(void)
+RVI::RVI(void)
 {
    this.symbol    = _Symbol;
    this.timeframe = 0;
+   this.period    = 10;
+   this.mode      = MODE_MAIN;
 }
 
 
-double AC::Value(const int shift)
+double RVI::Value(const int shift)
 {
-   return(iAC(this.symbol,
+   return(iRVI(this.symbol,
                this.timeframe,
+               this.period,
+               this.mode,
                shift
                )
           );
