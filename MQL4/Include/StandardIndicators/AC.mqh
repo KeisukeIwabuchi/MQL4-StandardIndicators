@@ -23,8 +23,8 @@ class AC : public IndicatorsBase
 
 AC::AC(void)
 {
-   this.symbol        = _Symbol;
-   this.timeframe     = 0;
+   this.symbol    = _Symbol;
+   this.timeframe = 0;
 }
 
 

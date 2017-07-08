@@ -29,13 +29,13 @@ class MACD : public IndicatorsBase
 
 MACD::MACD(void)
 {
-   this.symbol        = _Symbol;
-   this.timeframe     = 0;
+   this.symbol          = _Symbol;
+   this.timeframe       = 0;
    this.fast_ema_period = 9;
    this.slow_ema_period = 12;
    this.signal_period   = 26;
-   this.applied_price = PRICE_CLOSE;
-   this.mode          = MODE_MAIN;
+   this.applied_price   = PRICE_CLOSE;
+   this.mode            = MODE_MAIN;
 }
 
 
