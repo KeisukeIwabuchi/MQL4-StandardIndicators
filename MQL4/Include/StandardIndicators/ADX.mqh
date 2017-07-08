@@ -1,14 +1,18 @@
 //+------------------------------------------------------------------+
-//|                                                          RSI.mqh |
-//|                        Copyright 2017, MetaQuotes Software Corp. |
-//|                                             https://www.mql5.com |
+//|                                                          ADX.mqh |
+//|                                 Copyright 2017, Keisuke Iwabuchi |
+//|                                         https://order-button.com |
 //+------------------------------------------------------------------+
+
+
+#ifndef _LOAD_MODULE_ADX
+#define _LOAD_MODULE_ADX
 
 
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
-/** ADX */
+/** Average Directional Movement Index */
 class ADX : public IndicatorsBase
 {
    public:
@@ -44,3 +48,4 @@ double ADX::Value(const int shift)
 }
 
 
+#endif 

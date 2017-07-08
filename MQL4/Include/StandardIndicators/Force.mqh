@@ -1,46 +1,50 @@
 //+------------------------------------------------------------------+
-//|                                                          RSI.mqh |
+//|                                                        Force.mqh |
 //|                                 Copyright 2017, Keisuke Iwabuchi |
 //|                                         https://order-button.com |
 //+------------------------------------------------------------------+
 
 
-#ifndef _LOAD_MODULE_RSI
-#define _LOAD_MODULE_RSI
+#ifndef _LOAD_MODULE_FORCE
+#define _LOAD_MODULE_FORCE
 
 
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
-/** Relative Strength Index */
-class RSI : public IndicatorsBase
+/** Force */
+class Force : public IndicatorsBase
 {
    public:
       int period;
+      int ma_method;
       int applied_price;
+      int mode;
       
-      RSI(void);
+      Force(void);
       double Value(const int shift);
 };
 
 
-RSI::RSI(void)
+Force::Force(void)
 {
    this.symbol        = _Symbol;
    this.timeframe     = 0;
-   this.period        = 14;
+   this.period        = 13;
+   this.ma_method     = MODE_SMA;
    this.applied_price = PRICE_CLOSE;
 }
 
 
-double RSI::Value(const int shift)
+double Force::Value(const int shift)
 {
-   return(iRSI(this.symbol,
-               this.timeframe,
-               this.period,
-               this.applied_price,
-               shift
-               )
+   return(iForce(this.symbol,
+                 this.timeframe,
+                 this.period,
+                 this.ma_method,
+                 this.applied_price,
+                 shift
+                 )
           );
 }
 

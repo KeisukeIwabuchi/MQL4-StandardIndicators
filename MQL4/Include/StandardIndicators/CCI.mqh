@@ -1,41 +1,41 @@
 //+------------------------------------------------------------------+
-//|                                                          RSI.mqh |
+//|                                                          CCI.mqh |
 //|                                 Copyright 2017, Keisuke Iwabuchi |
 //|                                         https://order-button.com |
 //+------------------------------------------------------------------+
 
 
-#ifndef _LOAD_MODULE_RSI
-#define _LOAD_MODULE_RSI
+#ifndef _LOAD_MODULE_CCI
+#define _LOAD_MODULE_CCI
 
 
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
-/** Relative Strength Index */
-class RSI : public IndicatorsBase
+/** Commodity Channel Index */
+class CCI : public IndicatorsBase
 {
    public:
       int period;
       int applied_price;
       
-      RSI(void);
+      CCI(void);
       double Value(const int shift);
 };
 
 
-RSI::RSI(void)
+CCI::CCI(void)
 {
    this.symbol        = _Symbol;
    this.timeframe     = 0;
-   this.period        = 14;
+   this.period        = 20;
    this.applied_price = PRICE_CLOSE;
 }
 
 
-double RSI::Value(const int shift)
+double CCI::Value(const int shift)
 {
-   return(iRSI(this.symbol,
+   return(iCCI(this.symbol,
                this.timeframe,
                this.period,
                this.applied_price,

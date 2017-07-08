@@ -1,46 +1,46 @@
 //+------------------------------------------------------------------+
-//|                                                          RSI.mqh |
+//|                                                           AC.mqh |
 //|                                 Copyright 2017, Keisuke Iwabuchi |
 //|                                         https://order-button.com |
 //+------------------------------------------------------------------+
 
 
-#ifndef _LOAD_MODULE_RSI
-#define _LOAD_MODULE_RSI
+#ifndef _LOAD_MODULE_BEARS_POWER
+#define _LOAD_MODULE_BEARS_POWER
 
 
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
-/** Relative Strength Index */
-class RSI : public IndicatorsBase
+/** Bears Power */
+class BearsPower : public IndicatorsBase
 {
    public:
       int period;
       int applied_price;
       
-      RSI(void);
+      BearsPower(void);
       double Value(const int shift);
 };
 
 
-RSI::RSI(void)
+BearsPower::BearsPower(void)
 {
    this.symbol        = _Symbol;
    this.timeframe     = 0;
-   this.period        = 14;
+   this.period        = 13;
    this.applied_price = PRICE_CLOSE;
 }
 
 
-double RSI::Value(const int shift)
+double BearsPower::Value(const int shift)
 {
-   return(iRSI(this.symbol,
-               this.timeframe,
-               this.period,
-               this.applied_price,
-               shift
-               )
+   return(iBearsPower(this.symbol,
+                      this.timeframe,
+                      this.period,
+                      this.applied_price,
+                      shift
+                      )
           );
 }
 

@@ -1,8 +1,12 @@
 //+------------------------------------------------------------------+
 //|                                                MovingAverage.mqh |
-//|                        Copyright 2017, MetaQuotes Software Corp. |
-//|                                             https://www.mql5.com |
+//|                                 Copyright 2017, Keisuke Iwabuchi |
+//|                                         https://order-button.com |
 //+------------------------------------------------------------------+
+
+
+#ifndef _LOAD_MODULE_MA
+#define _LOAD_MODULE_MA
 
 
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
@@ -44,3 +48,6 @@ double MA::Value(const int shift)
               shift)
           );
 }
+
+
+#endif
