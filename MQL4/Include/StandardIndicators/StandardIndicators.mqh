@@ -28,6 +28,7 @@
 #include <mql4_modules\StandardIndicators\MA.mqh>
 #include <mql4_modules\StandardIndicators\MACD.mqh>
 #include <mql4_modules\StandardIndicators\MFI.mqh>
+#include <mql4_modules\StandardIndicators\OsMA.mqh>
 #include <mql4_modules\StandardIndicators\RSI.mqh>
 
 
