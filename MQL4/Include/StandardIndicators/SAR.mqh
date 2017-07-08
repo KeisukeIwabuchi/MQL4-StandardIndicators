@@ -12,7 +12,7 @@
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
-/** Money Flow Index */
+/** Parabolic Stop and Reverse */
 class SAR : public IndicatorsBase
 {
    public:

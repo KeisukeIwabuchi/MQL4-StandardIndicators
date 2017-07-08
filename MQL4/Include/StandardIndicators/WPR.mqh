@@ -1,37 +1,41 @@
 //+------------------------------------------------------------------+
-//|                                                           AC.mqh |
+//|                                                          WPR.mqh |
 //|                                 Copyright 2017, Keisuke Iwabuchi |
 //|                                         https://order-button.com |
 //+------------------------------------------------------------------+
 
 
-#ifndef _LOAD_MODULE_AC
-#define _LOAD_MODULE_AC
+#ifndef _LOAD_MODULE_WPR
+#define _LOAD_MODULE_WPR
 
 
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
-/** Bill Williams Accelerator/Decelerator oscillator */
-class AC : public IndicatorsBase
+/** Larry Williams Percent Range */
+class WPR : public IndicatorsBase
 {
    public:
-      AC(void);
+      int period;
+      
+      WPR(void);
       double Value(const int shift);
 };
 
 
-AC::AC(void)
+WPR::WPR(void)
 {
    this.symbol    = _Symbol;
    this.timeframe = 0;
+   this.period    = 14;
 }
 
 
-double AC::Value(const int shift)
+double WPR::Value(const int shift)
 {
-   return(iAC(this.symbol,
+   return(iWPR(this.symbol,
                this.timeframe,
+               this.period,
                shift
                )
           );

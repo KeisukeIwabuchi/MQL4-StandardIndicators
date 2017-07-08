@@ -28,7 +28,7 @@ RVI::RVI(void)
 {
    this.symbol    = _Symbol;
    this.timeframe = 0;
-   this.period    = 14;
+   this.period    = 10;
    this.mode      = MODE_MAIN;
 }
 

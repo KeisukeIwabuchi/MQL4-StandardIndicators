@@ -12,7 +12,7 @@
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
-/** Money Flow Index */
+/** Moving Average of Oscillator */
 class OsMA : public IndicatorsBase
 {
    public:

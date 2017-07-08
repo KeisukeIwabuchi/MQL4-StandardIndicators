@@ -35,6 +35,7 @@
 #include <mql4_modules\StandardIndicators\SAR.mqh>
 #include <mql4_modules\StandardIndicators\StdDev.mqh>
 #include <mql4_modules\StandardIndicators\Stochastic.mqh>
+#include <mql4_modules\StandardIndicators\WPR.mqh>
 
 
 #endif
