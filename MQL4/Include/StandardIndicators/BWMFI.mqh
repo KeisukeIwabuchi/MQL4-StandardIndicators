@@ -23,8 +23,8 @@ class BWMFI : public IndicatorsBase
 
 BWMFI::BWMFI(void)
 {
-   this.symbol        = _Symbol;
-   this.timeframe     = 0;
+   this.symbol    = _Symbol;
+   this.timeframe = 0;
 }
 
 

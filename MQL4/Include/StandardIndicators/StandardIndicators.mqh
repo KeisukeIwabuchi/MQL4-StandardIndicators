@@ -24,6 +24,7 @@
 #include <mql4_modules\StandardIndicators\Fractals.mqh>
 #include <mql4_modules\StandardIndicators\Gator.mqh>
 #include <mql4_modules\StandardIndicators\Ichimoku.mqh>
+#include <mql4_modules\StandardIndicators\Momentum.mqh>
 #include <mql4_modules\StandardIndicators\MA.mqh>
 #include <mql4_modules\StandardIndicators\MACD.mqh>
 #include <mql4_modules\StandardIndicators\RSI.mqh>
