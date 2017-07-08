@@ -1,49 +1,46 @@
 //+------------------------------------------------------------------+
-//|                                                        Force.mqh |
+//|                                                     Momentum.mqh |
 //|                                 Copyright 2017, Keisuke Iwabuchi |
 //|                                         https://order-button.com |
 //+------------------------------------------------------------------+
 
 
-#ifndef _LOAD_MODULE_FORCE
-#define _LOAD_MODULE_FORCE
+#ifndef _LOAD_MODULE_MOMENTUM
+#define _LOAD_MODULE_MOMENTUM
 
 
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
-/** Force */
-class Force : public IndicatorsBase
+/** Momentum */
+class Momentum : public IndicatorsBase
 {
    public:
       int period;
-      int ma_method;
       int applied_price;
       
-      Force(void);
+      Momentum(void);
       double Value(const int shift);
 };
 
 
-Force::Force(void)
+Momentum::Momentum(void)
 {
    this.symbol        = _Symbol;
    this.timeframe     = 0;
-   this.period        = 13;
-   this.ma_method     = MODE_SMA;
+   this.period        = 14;
    this.applied_price = PRICE_CLOSE;
 }
 
 
-double Force::Value(const int shift)
+double Momentum::Value(const int shift)
 {
-   return(iForce(this.symbol,
-                 this.timeframe,
-                 this.period,
-                 this.ma_method,
-                 this.applied_price,
-                 shift
-                 )
+   return(iMomentum(this.symbol,
+                    this.timeframe,
+                    this.period,
+                    this.applied_price,
+                    shift
+                    )
           );
 }
 
