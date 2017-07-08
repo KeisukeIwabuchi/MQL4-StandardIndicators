@@ -1,7 +1,7 @@
 //+------------------------------------------------------------------+
 //|                                                          RSI.mqh |
-//|                        Copyright 2017, MetaQuotes Software Corp. |
-//|                                             https://www.mql5.com |
+//|                                 Copyright 2017, Keisuke Iwabuchi |
+//|                                        https://order-button.com/ |
 //+------------------------------------------------------------------+
 
 

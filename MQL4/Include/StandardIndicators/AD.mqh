@@ -1,34 +1,34 @@
 //+------------------------------------------------------------------+
-//|                                                           AC.mqh |
+//|                                                           AD.mqh |
 //|                                 Copyright 2017, Keisuke Iwabuchi |
 //|                                        https://order-button.com/ |
 //+------------------------------------------------------------------+
 
 
-#ifndef _LOAD_MODULE_AC
-#define _LOAD_MODULE_AC
+#ifndef _LOAD_MODULE_AD
+#define _LOAD_MODULE_AD
 
 
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
-/** Bill William's Accelerator/Decelerator oscillator */
-class AC : public IndicatorsBase
+/** Accumulation/Distribution */
+class AD : public IndicatorsBase
 {
    public:
-      AC(void);
+      AD(void);
       double Value(const int shift);
 };
 
 
-AC::AC(void)
+AD::AD(void)
 {
    this.symbol        = _Symbol;
    this.timeframe     = 0;
 }
 
 
-double AC::Value(const int shift)
+double AD::Value(const int shift)
 {
    return(iAC(this.symbol,
                this.timeframe,
