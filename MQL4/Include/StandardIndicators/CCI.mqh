@@ -16,8 +16,8 @@
 class CCI : public IndicatorsBase
 {
    public:
-      int    period;
-      int    applied_price;
+      int period;
+      int applied_price;
       
       CCI(void);
       double Value(const int shift);
