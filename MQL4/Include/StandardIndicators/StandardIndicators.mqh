@@ -21,6 +21,7 @@
 #include <mql4_modules\StandardIndicators\Envelopes.mqh>
 #include <mql4_modules\StandardIndicators\Force.mqh>
 #include <mql4_modules\StandardIndicators\Fractals.mqh>
+#include <mql4_modules\StandardIndicators\Gator.mqh>
 #include <mql4_modules\StandardIndicators\MA.mqh>
 #include <mql4_modules\StandardIndicators\MACD.mqh>
 #include <mql4_modules\StandardIndicators\RSI.mqh>
