@@ -5,6 +5,10 @@
 //+------------------------------------------------------------------+
 
 
+#ifndef _LOAD_MODULE_RSI
+#define _LOAD_MODULE_RSI
+
+
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
@@ -41,3 +45,4 @@ double RSI::Value(const int shift)
 }
 
 
+#endif

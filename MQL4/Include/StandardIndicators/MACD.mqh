@@ -1,14 +1,18 @@
 //+------------------------------------------------------------------+
-//|                                                          RSI.mqh |
+//|                                                         MACD.mqh |
 //|                        Copyright 2017, MetaQuotes Software Corp. |
 //|                                             https://www.mql5.com |
 //+------------------------------------------------------------------+
 
 
+#ifndef _LOAD_MODULE_MACD
+#define _LOAD_MODULE_MACD
+
+
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
-/** MACD */
+/** Moving Averages Convergence/Divergence */
 class MACD : public IndicatorsBase
 {
    public:
@@ -50,3 +54,4 @@ double MACD::Value(const int shift)
 }
 
 
+#endif

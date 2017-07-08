@@ -1,51 +1,41 @@
 //+------------------------------------------------------------------+
-//|                                                          ADX.mqh |
+//|                                                          RSI.mqh |
 //|                        Copyright 2017, MetaQuotes Software Corp. |
 //|                                             https://www.mql5.com |
 //+------------------------------------------------------------------+
 
 
-#ifndef _LOAD_MODULE_ADX
-#define _LOAD_MODULE_ADX
+#ifndef _LOAD_MODULE_AC
+#define _LOAD_MODULE_AC
 
 
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
-/** Average Directional Movement Index */
-class ADX : public IndicatorsBase
+/** Bill William's Accelerator/Decelerator oscillator */
+class AC : public IndicatorsBase
 {
    public:
-      int period;
-      int applied_price;
-      int mode;
-      
-      ADX(void);
+      AC(void);
       double Value(const int shift);
 };
 
 
-ADX::ADX(void)
+AC::AC(void)
 {
    this.symbol        = _Symbol;
    this.timeframe     = 0;
-   this.period        = 14;
-   this.applied_price = PRICE_CLOSE;
-   this.mode          = MODE_MAIN;
 }
 
 
-double ADX::Value(const int shift)
+double AC::Value(const int shift)
 {
-   return(iADX(this.symbol,
+   return(iAC(this.symbol,
                this.timeframe,
-               this.period,
-               this.applied_price,
-               this.mode,
                shift
                )
           );
 }
 
 
-#endif 
+#endif

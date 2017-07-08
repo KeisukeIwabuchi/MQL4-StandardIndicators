@@ -5,6 +5,10 @@
 //+------------------------------------------------------------------+
 
 
+#ifndef _LOAD_MODULE_MA
+#define _LOAD_MODULE_MA
+
+
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
@@ -44,3 +48,6 @@ double MA::Value(const int shift)
               shift)
           );
 }
+
+
+#endif
