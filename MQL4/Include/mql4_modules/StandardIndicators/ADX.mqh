@@ -1,48 +1,59 @@
 //+------------------------------------------------------------------+
-//|                                                          CCI.mqh |
+//|                                                          ADX.mqh |
 //|                                 Copyright 2017, Keisuke Iwabuchi |
 //|                                         https://order-button.com |
 //+------------------------------------------------------------------+
 
 
-#ifndef _LOAD_MODULE_CCI
-#define _LOAD_MODULE_CCI
+#ifndef _LOAD_MODULE_ADX
+#define _LOAD_MODULE_ADX
 
 
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
-/** Commodity Channel Index */
-class CCI : public IndicatorsBase
+/** Average Directional Movement Index */
+class ADX : public IndicatorsBase
 {
    public:
       int period;
       int applied_price;
+      int mode;
       
-      CCI(void);
+      ADX(void);
       double Value(const int shift);
 };
 
 
-CCI::CCI(void)
+/** constructor. */
+ADX::ADX(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
-   this.period        = 20;
+   this.period        = 14;
    this.applied_price = PRICE_CLOSE;
+   this.mode          = MODE_MAIN;
 }
 
 
-double CCI::Value(const int shift)
+/**
+ * Calculates the Average Directional Movement Index.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns ADX value.
+ */
+double ADX::Value(const int shift)
 {
-   return(iCCI(this.symbol,
+   return(iADX(this.symbol,
                this.timeframe,
                this.period,
                this.applied_price,
+               this.mode,
                shift
                )
           );
 }
 
 
-#endif
+#endif 

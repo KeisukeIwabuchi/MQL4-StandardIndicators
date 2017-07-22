@@ -23,14 +23,22 @@ class Fractals : public IndicatorsBase
 };
 
 
+/** constructor. */
 Fractals::Fractals(void)
 {
-   this.symbol    = _Symbol;
+   this.symbol    = __Symbol;
    this.timeframe = 0;
    this.mode      = MODE_UPPER;
 }
 
 
+/**
+ * Calculates the Fractals.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns Fractals value.
+ */
 double Fractals::Value(const int shift)
 {
    return(iFractals(this.symbol,

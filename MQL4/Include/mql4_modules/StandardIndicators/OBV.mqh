@@ -1,43 +1,48 @@
 //+------------------------------------------------------------------+
-//|                                                          RSI.mqh |
+//|                                                          OBV.mqh |
 //|                                 Copyright 2017, Keisuke Iwabuchi |
 //|                                         https://order-button.com |
 //+------------------------------------------------------------------+
 
 
-#ifndef _LOAD_MODULE_RSI
-#define _LOAD_MODULE_RSI
+#ifndef _LOAD_MODULE_OBV
+#define _LOAD_MODULE_OBV
 
 
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
-/** Relative Strength Index */
-class RSI : public IndicatorsBase
+/** On Balance Valume */
+class OBV : public IndicatorsBase
 {
    public:
-      int period;
       int applied_price;
       
-      RSI(void);
+      OBV(void);
       double Value(const int shift);
 };
 
 
-RSI::RSI(void)
+/** constructor. */
+OBV::OBV(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
-   this.period        = 14;
    this.applied_price = PRICE_CLOSE;
 }
 
 
-double RSI::Value(const int shift)
+/**
+ * Calculates the On Balance Valume.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns OBV value.
+ */
+double OBV::Value(const int shift)
 {
-   return(iRSI(this.symbol,
+   return(iOBV(this.symbol,
                this.timeframe,
-               this.period,
                this.applied_price,
                shift
                )

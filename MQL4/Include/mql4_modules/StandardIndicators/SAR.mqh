@@ -24,15 +24,23 @@ class SAR : public IndicatorsBase
 };
 
 
+/** constructor. */
 SAR::SAR(void)
 {
-   this.symbol    = _Symbol;
+   this.symbol    = __Symbol;
    this.timeframe = 0;
    this.step      = 0.02;
    this.maximum   = 0.2;
 }
 
 
+/**
+ * Calculates the Parabolic Stop and Reverse.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns SAR value.
+ */
 double SAR::Value(const int shift)
 {
    return(iSAR(this.symbol,

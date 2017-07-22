@@ -1,19 +1,19 @@
 //+------------------------------------------------------------------+
-//|                                                        Gator.mqh |
+//|                                                    Alligator.mqh |
 //|                                 Copyright 2017, Keisuke Iwabuchi |
 //|                                         https://order-button.com |
 //+------------------------------------------------------------------+
 
 
-#ifndef _LOAD_MODULE_GATOR
-#define _LOAD_MODULE_GATOR
+#ifndef _LOAD_MODULE_ALLIGATOR
+#define _LOAD_MODULE_ALLIGATOR
 
 
 #include <mql4_modules\StandardIndicators\IndicatorsBase.mqh>
 
 
-/** Gator oscillator */
-class Gator : public IndicatorsBase
+/** Alligator */
+class Alligator : public IndicatorsBase
 {
    public:
       int jaw_period;
@@ -26,14 +26,15 @@ class Gator : public IndicatorsBase
       int applied_price;
       int mode;
       
-      Gator(void);
+      Alligator(void);
       double Value(const int shift);
 };
 
 
-Gator::Gator(void)
+/** constructor. */
+Alligator::Alligator(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
    this.jaw_period    = 13;
    this.jaw_shift     = 8;
@@ -47,21 +48,28 @@ Gator::Gator(void)
 }
 
 
-double Gator::Value(const int shift)
+/**
+ * Calculates the Alligator.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns Alligator value.
+ */
+double Alligator::Value(const int shift)
 {
-   return(iGator(this.symbol,
-                 this.timeframe,
-                 this.jaw_period,
-                 this.jaw_shift,
-                 this.teeth_period,
-                 this.teeth_shift,
-                 this.lips_period,
-                 this.lips_shift,
-                 this.ma_method,
-                 this.applied_price,
-                 this.mode,
-                 shift
-                 )
+   return(iAlligator(this.symbol,
+                     this.timeframe,
+                     this.jaw_period,
+                     this.jaw_shift,
+                     this.teeth_period,
+                     this.teeth_shift,
+                     this.lips_period,
+                     this.lips_shift,
+                     this.ma_method,
+                     this.applied_price,
+                     this.mode,
+                     shift
+                     )
           );
 }
 

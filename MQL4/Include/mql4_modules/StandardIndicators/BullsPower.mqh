@@ -24,15 +24,23 @@ class BullsPower : public IndicatorsBase
 };
 
 
+/** constructor. */
 BullsPower::BullsPower(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
    this.period        = 13;
    this.applied_price = PRICE_CLOSE;
 }
 
 
+/**
+ * Calculates the Bulls Power.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns BullsPower value.
+ */
 double BullsPower::Value(const int shift)
 {
    return(iBullsPower(this.symbol,

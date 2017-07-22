@@ -27,9 +27,10 @@ class MACD : public IndicatorsBase
 };
 
 
+/** constructor. */
 MACD::MACD(void)
 {
-   this.symbol          = _Symbol;
+   this.symbol          = __Symbol;
    this.timeframe       = 0;
    this.fast_ema_period = 12;
    this.slow_ema_period = 26;
@@ -39,6 +40,13 @@ MACD::MACD(void)
 }
 
 
+/**
+ * Calculates the Moving Averages Convergence/Divergence.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns MACD value.
+ */
 double MACD::Value(const int shift)
 {
    return(iMACD(this.symbol,

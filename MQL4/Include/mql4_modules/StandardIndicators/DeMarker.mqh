@@ -23,14 +23,22 @@ class DeMarker : public IndicatorsBase
 };
 
 
+/** constructor. */
 DeMarker::DeMarker(void)
 {
-   this.symbol    = _Symbol;
+   this.symbol    = __Symbol;
    this.timeframe = 0;
    this.period    = 20;
 }
 
 
+/**
+ * Calculates the DeMarker.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns DeMarker value.
+ */
 double DeMarker::Value(const int shift)
 {
    return(iDeMarker(this.symbol,

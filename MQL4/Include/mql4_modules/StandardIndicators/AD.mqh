@@ -21,13 +21,21 @@ class AD : public IndicatorsBase
 };
 
 
+/** constructor. */
 AD::AD(void)
 {
-   this.symbol    = _Symbol;
+   this.symbol    = __Symbol;
    this.timeframe = 0;
 }
 
 
+/**
+ * Calculates the Accumulation/Distribution.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns AD value.
+ */
 double AD::Value(const int shift)
 {
    return(iAC(this.symbol,

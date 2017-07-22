@@ -21,13 +21,21 @@ class BWMFI : public IndicatorsBase
 };
 
 
+/** constructor. */
 BWMFI::BWMFI(void)
 {
-   this.symbol    = _Symbol;
+   this.symbol    = __Symbol;
    this.timeframe = 0;
 }
 
 
+/**
+ * Calculates the Market Facilitation Index.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns BWMFI value.
+ */
 double BWMFI::Value(const int shift)
 {
    return(iBWMFI(this.symbol,

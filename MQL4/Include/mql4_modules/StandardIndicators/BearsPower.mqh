@@ -24,15 +24,23 @@ class BearsPower : public IndicatorsBase
 };
 
 
+/** constructor. */
 BearsPower::BearsPower(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
    this.period        = 13;
    this.applied_price = PRICE_CLOSE;
 }
 
 
+/**
+ * Calculates the Bears Power.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns BearsPower value.
+ */
 double BearsPower::Value(const int shift)
 {
    return(iBearsPower(this.symbol,

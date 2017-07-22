@@ -26,9 +26,10 @@ class MA : public IndicatorsBase
 };
 
 
+/** constructor. */
 MA::MA(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
    this.period        = 20;
    this.ma_shift      = 0;
@@ -37,6 +38,13 @@ MA::MA(void)
 }
 
 
+/**
+ * Calculates the Moving Average.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns MA value.
+ */
 double MA::Value(const int shift)
 {
    return(iMA(this.symbol,

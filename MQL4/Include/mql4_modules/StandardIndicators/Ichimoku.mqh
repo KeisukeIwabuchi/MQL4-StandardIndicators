@@ -26,9 +26,10 @@ class Ichimoku : public IndicatorsBase
 };
 
 
+/** constructor. */
 Ichimoku::Ichimoku(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
    this.tenkan_sen    = 9;
    this.kijun_sen     = 26;
@@ -37,6 +38,13 @@ Ichimoku::Ichimoku(void)
 }
 
 
+/**
+ * Calculates the Ichimoku Kinko Hyo.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns Ichimoku value.
+ */
 double Ichimoku::Value(const int shift)
 {
    return(iIchimoku(this.symbol,
