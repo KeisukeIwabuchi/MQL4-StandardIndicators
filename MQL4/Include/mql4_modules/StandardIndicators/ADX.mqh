@@ -25,9 +25,10 @@ class ADX : public IndicatorsBase
 };
 
 
+/** constructor. */
 ADX::ADX(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
    this.period        = 14;
    this.applied_price = PRICE_CLOSE;
@@ -35,6 +36,13 @@ ADX::ADX(void)
 }
 
 
+/**
+ * Calculates the Average Directional Movement Index.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns ADX value.
+ */
 double ADX::Value(const int shift)
 {
    return(iADX(this.symbol,

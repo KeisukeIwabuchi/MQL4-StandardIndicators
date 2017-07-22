@@ -24,15 +24,23 @@ class CCI : public IndicatorsBase
 };
 
 
+/** constructor. */
 CCI::CCI(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
    this.period        = 20;
    this.applied_price = PRICE_CLOSE;
 }
 
 
+/**
+ * Calculates the Commodity Channel Index.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns CCI value.
+ */
 double CCI::Value(const int shift)
 {
    return(iCCI(this.symbol,

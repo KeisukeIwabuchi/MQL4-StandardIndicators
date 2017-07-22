@@ -26,9 +26,10 @@ class StdDev : public IndicatorsBase
 };
 
 
+/** constructor. */
 StdDev::StdDev(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
    this.ma_period     = 20;
    this.ma_shift      = 0;
@@ -37,6 +38,13 @@ StdDev::StdDev(void)
 }
 
 
+/**
+ * Calculates the Standard Deviation.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns StdDev value.
+ */
 double StdDev::Value(const int shift)
 {
    return(iStdDev(this.symbol,

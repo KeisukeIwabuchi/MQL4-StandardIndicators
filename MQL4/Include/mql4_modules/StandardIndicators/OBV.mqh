@@ -23,14 +23,22 @@ class OBV : public IndicatorsBase
 };
 
 
+/** constructor. */
 OBV::OBV(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
    this.applied_price = PRICE_CLOSE;
 }
 
 
+/**
+ * Calculates the On Balance Valume.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns OBV value.
+ */
 double OBV::Value(const int shift)
 {
    return(iOBV(this.symbol,

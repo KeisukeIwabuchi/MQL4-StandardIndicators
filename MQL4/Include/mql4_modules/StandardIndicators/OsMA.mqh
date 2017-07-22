@@ -26,9 +26,10 @@ class OsMA : public IndicatorsBase
 };
 
 
+/** constructor. */
 OsMA::OsMA(void)
 {
-   this.symbol          = _Symbol;
+   this.symbol          = __Symbol;
    this.timeframe       = 0;
    this.fast_ema_period = 12;
    this.slow_ema_period = 26;
@@ -37,6 +38,13 @@ OsMA::OsMA(void)
 }
 
 
+/**
+ * Calculates the Moving Average of Oscillator.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns OsMA value.
+ */
 double OsMA::Value(const int shift)
 {
    return(iOsMA(this.symbol,

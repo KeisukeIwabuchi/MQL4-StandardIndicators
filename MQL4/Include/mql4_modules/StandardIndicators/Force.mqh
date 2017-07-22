@@ -25,9 +25,10 @@ class Force : public IndicatorsBase
 };
 
 
+/** constructor. */
 Force::Force(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
    this.period        = 13;
    this.ma_method     = MODE_SMA;
@@ -35,6 +36,13 @@ Force::Force(void)
 }
 
 
+/**
+ * Calculates the Force.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns Force value.
+ */
 double Force::Value(const int shift)
 {
    return(iForce(this.symbol,

@@ -28,9 +28,10 @@ class Envelopes : public IndicatorsBase
 };
 
 
+/** constructor. */
 Envelopes::Envelopes(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
    this.ma_period     = 14;
    this.ma_method     = MODE_SMA;
@@ -41,6 +42,13 @@ Envelopes::Envelopes(void)
 }
 
 
+/**
+ * Calculates the Envelopes.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns Envelopes value.
+ */
 double Envelopes::Value(const int shift)
 {
    return(iEnvelopes(this.symbol,

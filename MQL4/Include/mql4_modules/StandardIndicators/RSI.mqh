@@ -24,15 +24,23 @@ class RSI : public IndicatorsBase
 };
 
 
+/** constructor. */
 RSI::RSI(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
    this.period        = 14;
    this.applied_price = PRICE_CLOSE;
 }
 
 
+/**
+ * Calculates the Relative Strength Index.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns RSI value.
+ */
 double RSI::Value(const int shift)
 {
    return(iRSI(this.symbol,

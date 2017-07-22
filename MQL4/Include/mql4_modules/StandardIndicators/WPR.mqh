@@ -23,14 +23,22 @@ class WPR : public IndicatorsBase
 };
 
 
+/** constructor. */
 WPR::WPR(void)
 {
-   this.symbol    = _Symbol;
+   this.symbol    = __Symbol;
    this.timeframe = 0;
    this.period    = 14;
 }
 
 
+/**
+ * Calculates the Larry Williams Percent Range.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns WPR value.
+ */
 double WPR::Value(const int shift)
 {
    return(iWPR(this.symbol,

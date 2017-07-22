@@ -28,9 +28,10 @@ class Stochastic : public IndicatorsBase
 };
 
 
+/** constructor. */
 Stochastic::Stochastic(void)
 {
-   this.symbol      = _Symbol;
+   this.symbol      = __Symbol;
    this.timeframe   = 0;
    this.Kperiod     = 5;
    this.Dperiod     = 3;
@@ -41,6 +42,13 @@ Stochastic::Stochastic(void)
 }
 
 
+/**
+ * Calculates the Stochastic oscillator.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns Stochastic value.
+ */
 double Stochastic::Value(const int shift)
 {
    return(iStochastic(this.symbol,

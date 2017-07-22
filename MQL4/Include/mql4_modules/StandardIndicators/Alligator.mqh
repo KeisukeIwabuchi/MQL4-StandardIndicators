@@ -31,9 +31,10 @@ class Alligator : public IndicatorsBase
 };
 
 
+/** constructor. */
 Alligator::Alligator(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
    this.jaw_period    = 13;
    this.jaw_shift     = 8;
@@ -47,6 +48,13 @@ Alligator::Alligator(void)
 }
 
 
+/**
+ * Calculates the Alligator.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns Alligator value.
+ */
 double Alligator::Value(const int shift)
 {
    return(iAlligator(this.symbol,

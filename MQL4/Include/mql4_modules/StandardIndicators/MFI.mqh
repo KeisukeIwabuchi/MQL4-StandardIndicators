@@ -23,14 +23,22 @@ class MFI : public IndicatorsBase
 };
 
 
+/** constructor. */
 MFI::MFI(void)
 {
-   this.symbol    = _Symbol;
+   this.symbol    = __Symbol;
    this.timeframe = 0;
    this.period    = 14;
 }
 
 
+/**
+ * Calculates the Money Flow Index.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns MFI value.
+ */
 double MFI::Value(const int shift)
 {
    return(iMFI(this.symbol,

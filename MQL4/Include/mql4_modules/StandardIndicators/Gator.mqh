@@ -31,9 +31,10 @@ class Gator : public IndicatorsBase
 };
 
 
+/** constructor. */
 Gator::Gator(void)
 {
-   this.symbol        = _Symbol;
+   this.symbol        = __Symbol;
    this.timeframe     = 0;
    this.jaw_period    = 13;
    this.jaw_shift     = 8;
@@ -47,6 +48,13 @@ Gator::Gator(void)
 }
 
 
+/**
+ * Calculates the Gator oscillator.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns Gator value.
+ */
 double Gator::Value(const int shift)
 {
    return(iGator(this.symbol,

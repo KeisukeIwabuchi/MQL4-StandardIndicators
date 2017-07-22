@@ -24,15 +24,23 @@ class RVI : public IndicatorsBase
 };
 
 
+/** constructor. */
 RVI::RVI(void)
 {
-   this.symbol    = _Symbol;
+   this.symbol    = __Symbol;
    this.timeframe = 0;
    this.period    = 10;
    this.mode      = MODE_MAIN;
 }
 
 
+/**
+ * Calculates the Relative Vigor Index.
+ *
+ * @pram const int shift  Shift relative to the current bar.
+ *
+ * @return double  Returns RVI value.
+ */
 double RVI::Value(const int shift)
 {
    return(iRVI(this.symbol,
