@@ -3,7 +3,7 @@
 
 ## Install
 1. Download Files
-2. Save the file to /MQL4/Includes/mql4_modules/StandardIndicators/
+2. Save the file to /MQL4/Include/mql4_modules/StandardIndicators/
 
 
 ## Usage
